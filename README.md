@@ -1,0 +1,2 @@
+# vidmitriev.github.io
+pages
