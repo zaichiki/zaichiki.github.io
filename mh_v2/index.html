@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monty Hall Problem Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ru">Русский</button>
+            <button class="lang-btn" data-lang="ja">日本語</button>
+        </div>
+        
+        <h1 id="title">The Monty Hall Problem</h1>
+        
+        <div class="explanation">
+            <p id="intro">The Monty Hall problem is a famous probability puzzle:</p>
+            <ol>
+                <li id="step1">There are three doors, behind one is a car, behind the others are goats.</li>
+                <li id="step2">You pick a door, hoping to win the car.</li>
+                <li id="step3">The host, who knows what's behind each door, opens one of the other doors to reveal a goat.</li>
+                <li id="step4">The host then asks if you want to stick with your original choice or switch to the remaining door.</li>
+                <li id="step5">What should you do? Is it better to switch or stay?</li>
+            </ol>
+        </div>
+
+        <div class="game-area">
+            <div class="doors-container">
+                <div class="door" id="door1">
+                    <div class="door-front">1</div>
+                    <div class="door-back"></div>
+                </div>
+                <div class="door" id="door2">
+                    <div class="door-front">2</div>
+                    <div class="door-back"></div>
+                </div>
+                <div class="door" id="door3">
+                    <div class="door-front">3</div>
+                    <div class="door-back"></div>
+                </div>
+            </div>
+
+            <div class="message" id="message">Choose a door!</div>
+            
+            <div class="buttons">
+                <button id="reset-btn" data-text="new-game">New Game</button>
+                <button id="stay-btn" disabled data-text="stay">Stay</button>
+                <button id="switch-btn" disabled data-text="switch">Switch</button>
+            </div>
+            
+            <div class="auto-run-controls">
+                <div class="auto-run-options">
+                    <select id="auto-strategy">
+                        <option value="stay" data-text="stay-option">Stay Strategy</option>
+                        <option value="switch" data-text="switch-option">Switch Strategy</option>
+                    </select>
+                    <button id="auto-run-btn" data-text="auto-run">Auto Run 100 Games</button>
+                </div>
+                <div id="auto-run-progress" class="hidden">
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <button id="stop-auto-btn" data-text="stop-auto">Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <h2 id="stats-title">Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3 id="stay-strategy">Stay Strategy</h3>
+                    <p id="wins-label-stay">Wins: <span id="stay-wins">0</span></p>
+                    <p id="losses-label-stay">Losses: <span id="stay-losses">0</span></p>
+                    <p id="win-rate-label-stay">Win Rate: <span id="stay-percentage">0%</span></p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="switch-strategy">Switch Strategy</h3>
+                    <p id="wins-label-switch">Wins: <span id="switch-wins">0</span></p>
+                    <p id="losses-label-switch">Losses: <span id="switch-losses">0</span></p>
+                    <p id="win-rate-label-switch">Win Rate: <span id="switch-percentage">0%</span></p>
+                </div>
+            </div>
+            <button id="reset-stats-btn" data-text="reset-stats">Reset Statistics</button>
+        </div>
+    </div>
+
+    <div id="fireworks-container" class="hidden"></div>
+    <div id="lose-effect" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
