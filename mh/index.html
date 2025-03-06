@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monty Hall Problem Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The Monty Hall Problem</h1>
+        
+        <div class="explanation">
+            <p>The Monty Hall problem is a famous probability puzzle:</p>
+            <ol>
+                <li>There are three doors, behind one is a car, behind the others are goats.</li>
+                <li>You pick a door, hoping to win the car.</li>
+                <li>The host, who knows what's behind each door, opens one of the other doors to reveal a goat.</li>
+                <li>The host then asks if you want to stick with your original choice or switch to the remaining door.</li>
+                <li>What should you do? Is it better to switch or stay?</li>
+            </ol>
+        </div>
+
+        <div class="game-area">
+            <div class="doors-container">
+                <div class="door" id="door1">
+                    <div class="door-front">1</div>
+                    <div class="door-back"></div>
+                </div>
+                <div class="door" id="door2">
+                    <div class="door-front">2</div>
+                    <div class="door-back"></div>
+                </div>
+                <div class="door" id="door3">
+                    <div class="door-front">3</div>
+                    <div class="door-back"></div>
+                </div>
+            </div>
+
+            <div class="message" id="message">Choose a door!</div>
+            
+            <div class="buttons">
+                <button id="reset-btn">New Game</button>
+                <button id="stay-btn" disabled>Stay</button>
+                <button id="switch-btn" disabled>Switch</button>
+                <button id="auto-run-btn">Auto Run 100 Games</button>
+                <button id="stop-auto-btn" disabled>Stop Auto Run</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <h2>Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3>Stay Strategy</h3>
+                    <p>Wins: <span id="stay-wins">0</span></p>
+                    <p>Losses: <span id="stay-losses">0</span></p>
+                    <p>Win Rate: <span id="stay-percentage">0%</span></p>
+                </div>
+                <div class="stat-box">
+                    <h3>Switch Strategy</h3>
+                    <p>Wins: <span id="switch-wins">0</span></p>
+                    <p>Losses: <span id="switch-losses">0</span></p>
+                    <p>Win Rate: <span id="switch-percentage">0%</span></p>
+                </div>
+            </div>
+            <button id="reset-stats-btn">Reset Statistics</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
