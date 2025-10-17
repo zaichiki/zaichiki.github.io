@@ -1,2 +1,2 @@
-# vidmitriev.github.io
+# .github.io
 pages
